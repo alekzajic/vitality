@@ -1,13 +1,13 @@
 import create from 'zustand'
 import { persist } from 'zustand/middleware'
 
-interface AppState {
+type AppStore = {
   currentLocale: string
   setCurrentLocale: (locale: string) => void
 }
 
 export const useAppStore = create(
-  persist<AppState>(
+  persist<AppStore>(
     (setState) => ({
       currentLocale: 'en-GB',
       setCurrentLocale: (locale) =>
