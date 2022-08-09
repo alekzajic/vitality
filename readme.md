@@ -1,3 +1,10 @@
+<br>
+<p align="center">
+  <img src="./public/assets/icons/logo.svg" alt="Vitality · React Template" width="120"/>
+</p>
+<p align="center"><em>Opinionated React Template</em></p>
+<br>
+
 # Vitality
 
 Opinionated React template setup with modern tooling, here some [recommendations](#recommendations) if needed

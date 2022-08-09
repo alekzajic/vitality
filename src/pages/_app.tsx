@@ -1,7 +1,10 @@
 import '@/styles/layers.css'
 
+import { QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
 import { Container } from '@/components'
-import { Guard } from '@/config'
+import { Guard, queryClient } from '@/config'
 import { AuthProvider } from '@/context'
 
 type Props = {
@@ -10,10 +13,13 @@ type Props = {
 
 export default function App({ children }: Props) {
   return (
-    <AuthProvider>
-      <Guard>
-        <Container>{children}</Container>
-      </Guard>
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <Guard>
+          <Container>{children}</Container>
+        </Guard>
+      </AuthProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   )
 }
