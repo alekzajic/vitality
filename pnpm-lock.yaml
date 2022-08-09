@@ -32,11 +32,11 @@ specifiers:
   serve: ^13.0.4
   tailwindcss: ^3.1.5
   typescript: ^4.7.4
-  vite: ^2.9.14
+  vite: ^3.0.5
 
 dependencies:
   '@tanstack/react-location': 3.7.4_biqbaboplfbrettd7655fr4n2y
-  generouted: 1.4.0_tgb7ff2lchbuc3alfyums4chb4
+  generouted: 1.4.0_tgrtlkreid6ld2narnr2hjolmy
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -68,7 +68,7 @@ devDependencies:
   serve: 13.0.4
   tailwindcss: 3.1.5
   typescript: 4.7.4
-  vite: 2.9.14
+  vite: 3.0.5
 
 packages:
 
@@ -1338,8 +1338,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      is-text-path: 1.0.1
       JSONStream: 1.3.5
+      is-text-path: 1.0.1
       lodash: 4.17.21
       meow: 8.1.2
       split2: 3.2.2
@@ -2196,7 +2196,7 @@ packages:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
     dev: true
 
-  /generouted/1.4.0_tgb7ff2lchbuc3alfyums4chb4:
+  /generouted/1.4.0_tgrtlkreid6ld2narnr2hjolmy:
     resolution: {integrity: sha512-f7jZRHc8bQBOeQuT1JmnIcM+KcceL9/dqaH7E9vmO21e0KaxCwtEauNgE61IXBe7Mygu9LaPKfukWj1rQEBIAA==}
     peerDependencies:
       '@tanstack/react-location': '>=3'
@@ -2207,7 +2207,7 @@ packages:
       '@tanstack/react-location': 3.7.4_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      vite: 2.9.14
+      vite: 3.0.5
     dev: false
 
   /gensync/1.0.0-beta.2:
@@ -3328,6 +3328,15 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: true
+
+  /postcss/8.4.16:
+    resolution: {integrity: sha512-ipHE1XBvKzm5xI7hiHCZJCSugxvsdq2mPnsq5+UF+VHCjiBvtDrlxJfMBToWaP9D5XlgNmcFGqoHmUn0EYEaRQ==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.4
+      picocolors: 1.0.0
+      source-map-js: 1.0.2
 
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -4133,14 +4142,15 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite/2.9.14:
-    resolution: {integrity: sha512-P/UCjSpSMcE54r4mPak55hWAZPlyfS369svib/gpmz8/01L822lMPOJ/RYW6tLCe1RPvMvOsJ17erf55bKp4Hw==}
-    engines: {node: '>=12.2.0'}
+  /vite/3.0.5:
+    resolution: {integrity: sha512-bRvrt9Tw8EGW4jj64aYFTnVg134E8hgDxyl/eEHnxiGqYk7/pTPss6CWlurqPOUzqvEoZkZ58Ws+Iu8MB87iMA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
       less: '*'
       sass: '*'
       stylus: '*'
+      terser: ^5.4.0
     peerDependenciesMeta:
       less:
         optional: true
@@ -4148,9 +4158,11 @@ packages:
         optional: true
       stylus:
         optional: true
+      terser:
+        optional: true
     dependencies:
       esbuild: 0.14.48
-      postcss: 8.4.14
+      postcss: 8.4.16
       resolve: 1.22.1
       rollup: 2.76.0
     optionalDependencies:
