@@ -12,7 +12,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
   ],
-  plugins: ['@typescript-eslint', 'simple-import-sort'],
+  plugins: ['@typescript-eslint', 'simple-import-sort', 'prettier'],
   rules: {
     'react/prop-types': 'off',
     'simple-import-sort/exports': 'warn',

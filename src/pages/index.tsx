@@ -14,6 +14,7 @@ export default function Home() {
   return (
     <>
       <img className="h-32 w-32" src="/assets/icons/logo.svg" alt={data.name} title={data.name} />
+      <h1 className="mt-6 text-2xl font-bold text-gray-500">Vitality v0.0.1</h1>
       <em className="mt-4 text-gray-700">{data.description}</em>
 
       <ul className="mt-8">
