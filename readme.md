@@ -22,6 +22,12 @@ Opinionated React template setup with modern tooling, here some [recommendations
 - [Husky](https://typicode.github.io/husky)
 - [Commitlint](https://commitlint.js.org)
 - [Lint-staged](https://github.com/okonet/lint-staged)
+- [React Query](https://tanstack.com/query/v4)
+- [React Hook Form](https://react-hook-form.com)
+- [Zustand](https://zustand-demo.pmnd.rs)
+- [Vitest](https://vitest.dev)
+- [Jest](https://jestjs.io)
+- [Testing Library](https://github.com/testing-library/react-testing-library)
 - [Vercel](http://vercel.com)
 
 ## Features
