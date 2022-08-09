@@ -1,5 +1,5 @@
 {
-  "name": "Vitality",
+  "name": "vitality",
   "version": "1.0.0",
   "description": "React Application template",
   "author": "Aleksandar Zajić <alisteroz@gmail.com>",
@@ -43,7 +43,8 @@
     "@tanstack/react-location": "^3.7.4",
     "generouted": "^1.4.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "zustand": "^4.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
