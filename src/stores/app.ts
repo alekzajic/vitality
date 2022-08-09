@@ -18,6 +18,6 @@ export const useAppStore = create(
     }),
     {
       name: 'app_store',
-    },
-  ),
+    }
+  )
 )
