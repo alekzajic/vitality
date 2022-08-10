@@ -19,7 +19,7 @@ const colors = { cyan: '\x1b[36m', gray: '\x1b[37m', green: '\x1b[32m', magenta:
 const padding = Math.max(...routes.map((route: string) => route.length)) * 2
 
 console.log(`${colors.cyan}prerender v0.1.0 ${colors.green}prerendering...${colors.reset}`)
-console.log(`${colors.green}✓${colors.reset} ${routes.length} pages prerendered.`)
+console.log(`${colors.green}✓${colors.reset} ${routes.length} pages pre-rendered.`)
 
 for (const url of routes) {
   render(url).then((app: string) => {
