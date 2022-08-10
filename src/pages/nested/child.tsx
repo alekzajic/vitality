@@ -1,4 +1,4 @@
-import { Link } from '@tanstack/react-location';
+import { Link } from '@tanstack/react-location'
 
 export default function Child() {
   return (
@@ -9,5 +9,5 @@ export default function Child() {
         ⟵
       </Link>
     </>
-  );
+  )
 }

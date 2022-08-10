@@ -1,6 +1,6 @@
-import { Outlet } from '@tanstack/react-location';
+import { Outlet } from '@tanstack/react-location'
 
-import { Link } from '@/components';
+import { Link } from '@/components'
 
 export default function Nested() {
   return (
@@ -28,5 +28,5 @@ export default function Nested() {
         <Outlet />
       </div>
     </>
-  );
+  )
 }

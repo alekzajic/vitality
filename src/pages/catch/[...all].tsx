@@ -1,11 +1,11 @@
-import { MakeGenerics, useMatch } from '@tanstack/react-location';
+import { MakeGenerics, useMatch } from '@tanstack/react-location'
 
-import { Link } from '@/components';
+import { Link } from '@/components'
 
-type Route = MakeGenerics<{ Params: { '*': string } }>;
+type Route = MakeGenerics<{ Params: { '*': string } }>
 
 export default function CatchAll() {
-  const { params } = useMatch<Route>();
+  const { params } = useMatch<Route>()
 
   return (
     <>
@@ -15,5 +15,5 @@ export default function CatchAll() {
         ⟵
       </Link>
     </>
-  );
+  )
 }
