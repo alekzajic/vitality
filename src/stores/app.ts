@@ -1,10 +1,10 @@
-import create from 'zustand'
-import { persist } from 'zustand/middleware'
+import create from 'zustand';
+import { persist } from 'zustand/middleware';
 
 type AppStore = {
-  currentLocale: string
-  setCurrentLocale: (locale: string) => void
-}
+  currentLocale: string;
+  setCurrentLocale: (locale: string) => void;
+};
 
 export const useAppStore = create(
   persist<AppStore>(
@@ -18,6 +18,6 @@ export const useAppStore = create(
     }),
     {
       name: 'app_store',
-    }
-  )
-)
+    },
+  ),
+);

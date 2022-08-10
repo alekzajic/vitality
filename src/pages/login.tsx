@@ -1,14 +1,14 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-import { useAuth } from '@/context'
+import { useAuth } from '@/context';
 
 export default function Login() {
-  const auth = useAuth()
+  const auth = useAuth();
 
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState('');
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setEmail(event.target.value)
-  const login = () => auth.login(email)
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setEmail(event.target.value);
+  const login = () => auth.login(email);
 
   return (
     <>
@@ -31,5 +31,5 @@ export default function Login() {
         </button>
       </div>
     </>
-  )
+  );
 }

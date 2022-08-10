@@ -30,7 +30,7 @@
     "export": "npm-run-all static server type-check prerender",
     "preview": "vite preview build/client",
     "serve": "serve build/client/dist",
-    "client": "vite build --outDir build/client/dist",
+    "client": "vite build --outDir dist",
     "static": "vite build --outDir build/static/dist",
     "server": "vite build --outDir build/server/dist --ssr src/server.tsx",
     "prerender": "node -r esbuild-register prerender.ts",

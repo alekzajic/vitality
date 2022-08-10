@@ -1,8 +1,8 @@
-import { Link } from '@/components'
-import { useAuth } from '@/context'
+import { Link } from '@/components';
+import { useAuth } from '@/context';
 
 export const Header = () => {
-  const auth = useAuth()
+  const auth = useAuth();
 
   return (
     <header className="flex items-center justify-between">
@@ -40,5 +40,5 @@ export const Header = () => {
         </span>
       )}
     </header>
-  )
-}
+  );
+};

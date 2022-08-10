@@ -1,8 +1,8 @@
-import { Header } from '@/components'
+import { Header } from '@/components';
 
 type Props = {
-  children: JSX.Element
-}
+  children: JSX.Element;
+};
 
 export const Container = ({ children }: Props) => {
   return (
@@ -10,5 +10,5 @@ export const Container = ({ children }: Props) => {
       <Header />
       <main className="flex flex-1 flex-col items-center justify-center">{children}</main>
     </div>
-  )
-}
+  );
+};

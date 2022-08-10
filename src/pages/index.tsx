@@ -1,15 +1,15 @@
-import { LoaderFn, MakeGenerics, useMatch } from '@tanstack/react-location'
+import { LoaderFn, MakeGenerics, useMatch } from '@tanstack/react-location';
 
-import { getRepo, Repo } from '@/api'
+import { getRepo, Repo } from '@/api';
 
-type Route = MakeGenerics<{ LoaderData: Repo }>
+type Route = MakeGenerics<{ LoaderData: Repo }>;
 
 export const loader: LoaderFn<Route> = () => {
-  return getRepo('vitality')
-}
+  return getRepo('vitality');
+};
 
 export default function Home() {
-  const { data } = useMatch<Route>()
+  const { data } = useMatch<Route>();
 
   return (
     <>
@@ -25,5 +25,5 @@ export default function Home() {
         </li>
       </ul>
     </>
-  )
+  );
 }

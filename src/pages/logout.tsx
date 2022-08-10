@@ -1,9 +1,9 @@
-import { useAuth } from '@/context'
+import { useAuth } from '@/context';
 
 export default function Logout() {
-  const auth = useAuth()
+  const auth = useAuth();
 
-  const logout = () => auth.logout()
+  const logout = () => auth.logout();
 
   return (
     <>
@@ -16,5 +16,5 @@ export default function Logout() {
         </button>
       </div>
     </>
-  )
+  );
 }
