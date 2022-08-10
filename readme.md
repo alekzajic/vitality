@@ -77,6 +77,10 @@ pnpm build
 
 # start production preview · http://localhost:5000
 pnpm start
+
+# run tests
+pnpm test
+
 ```
 
 ## Recommendations
