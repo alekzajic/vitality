@@ -15,6 +15,11 @@ export const Header = () => {
             /routing
           </Link>
         </li>
+        <li>
+          <Link className="p-2 hover:underline" to="/query">
+            /query
+          </Link>
+        </li>
       </ul>
     </header>
   )
