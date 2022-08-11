@@ -1,6 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
-import { Routes } from 'generouted'
+import { QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
+import { queryClient } from '@/config'
+
+import { Routes } from './routes'
 
 const app = document.getElementById('app') as Element
 const root = createRoot(app)
@@ -8,7 +13,10 @@ const root = createRoot(app)
 function Client() {
   return (
     <StrictMode>
-      <Routes />
+      <QueryClientProvider client={queryClient}>
+        <Routes />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </StrictMode>
   )
 }
