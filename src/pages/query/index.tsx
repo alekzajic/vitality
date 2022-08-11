@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Link, LoaderFn, MakeGenerics, MatchRoute, Outlet, useLoadRoute, useMatch } from '@tanstack/react-location'
+import { Link, LoaderFn, MakeGenerics, MatchRoute, Outlet, useLoadRoute } from '@tanstack/react-location'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
@@ -78,45 +78,4 @@ function Posts() {
   )
 }
 
-const fetchPostById = async (id: string) => {
-  await new Promise((r) => setTimeout(r, 500))
-  const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
-  return data
-}
-
-function usePost(postId: string) {
-  return useQuery<Post, any>(['posts', postId], () => fetchPostById(postId), {
-    enabled: !!postId,
-  })
-}
-
-function Post() {
-  const {
-    params: { postId },
-  } = useMatch()
-
-  const { status, data, error, isFetching } = usePost(postId)
-
-  return (
-    <div>
-      <div>
-        <Link to="..">Back</Link>
-      </div>
-      {!postId || status === 'loading' ? (
-        'Loading...'
-      ) : status === 'error' ? (
-        <span>Error: {error.message}</span>
-      ) : (
-        <>
-          <h1>
-            {data?.title} {isFetching ? '...' : ' '}
-          </h1>
-          <div>
-            <p>{data?.body}</p>
-          </div>
-        </>
-      )}
-    </div>
-  )
-}
 export default Posts
