@@ -4,8 +4,7 @@ import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 import { queryClient } from '@/config'
-
-import { Routes } from './routes'
+import { Routes } from '@/routes'
 
 const app = document.getElementById('app') as Element
 const root = createRoot(app)
