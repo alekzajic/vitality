@@ -45,6 +45,7 @@ specifiers:
   react: ^18.2.0
   react-dom: ^18.2.0
   react-hook-form: ^7.34.0
+  react-icons: ^4.4.0
   react-intl: ^6.0.5
   serve: ^13.0.4
   typescript: ^4.7.4
@@ -65,6 +66,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.34.0_react@18.2.0
+  react-icons: 4.4.0_react@18.2.0
   react-intl: 6.0.5_qtbnez4q7bzoc4eqybg3efzzxe
   yup: 0.32.11
   zustand: 4.0.0_react@18.2.0
@@ -6558,6 +6560,14 @@ packages:
       react: ^16.8.0 || ^17 || ^18
     dependencies:
       react: 18.2.0
+
+  /react-icons/4.4.0_react@18.2.0:
+    resolution: {integrity: sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /react-intl/6.0.5_qtbnez4q7bzoc4eqybg3efzzxe:
     resolution: {integrity: sha512-nDZ3BosuE8WdovcGxsrjj1aIgJZklSL5aORs5oah+5tLQTzUdOEstzJEYQPM+sxl1dkDOu7RCuw0z9oI9ENf9g==}
