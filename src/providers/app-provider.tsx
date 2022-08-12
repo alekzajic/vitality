@@ -1,18 +1,18 @@
-import { ReactNode } from 'react'
-import { IntlContext, IntlProvider } from 'react-intl'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ReactNode } from 'react';
+import { IntlContext, IntlProvider } from 'react-intl';
+import { ChakraProvider } from '@chakra-ui/react';
 
-import { useLocale } from '@/hooks'
-import { theme } from '@/theme'
+import { useLocale } from '@/hooks';
+import { theme } from '@/theme';
 
 type Props = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export const AppProvider = ({ children }: Props) => {
-  const { isLoading: isLocaleLoading, error: localeError, data: localeData } = useLocale()
+  const { isLoading: isLocaleLoading, error: localeError, data: localeData } = useLocale();
 
-  const isLoading = isLocaleLoading
+  const isLoading = isLocaleLoading;
 
   return (
     <>
@@ -30,5 +30,5 @@ export const AppProvider = ({ children }: Props) => {
         </IntlProvider>
       )}
     </>
-  )
-}
+  );
+};

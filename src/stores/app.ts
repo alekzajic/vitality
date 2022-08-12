@@ -1,14 +1,14 @@
-import create from 'zustand'
-import { devtools, persist } from 'zustand/middleware'
+import create from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
 
 interface AppStore {
   locale: {
-    locales: string[]
-    defaultLocale: string
-  }
-  setLocale: (locale: object) => void
-  currentLocale: string
-  setCurrentLocale: (locale: string) => void
+    locales: string[];
+    defaultLocale: string;
+  };
+  setLocale: (locale: object) => void;
+  currentLocale: string;
+  setCurrentLocale: (locale: string) => void;
 }
 
 export const useAppStore = create<AppStore>()(
@@ -24,7 +24,7 @@ export const useAppStore = create<AppStore>()(
           setState((state) => ({
             ...state,
             loc,
-          }))
+          }));
         },
         setCurrentLocale: (currLocale) =>
           setState((state) => ({
@@ -34,7 +34,7 @@ export const useAppStore = create<AppStore>()(
       }),
       {
         name: 'app_store',
-      }
-    )
-  )
-)
+      },
+    ),
+  ),
+);

@@ -1,13 +1,13 @@
-import { ColorModeScript, useTheme } from '@chakra-ui/react'
+import { ColorModeScript, useTheme } from '@chakra-ui/react';
 
-import { Header } from '@/components'
+import { Header } from '@/components';
 
 type Props = {
-  children: JSX.Element
-}
+  children: JSX.Element;
+};
 
 export const Container = ({ children }: Props) => {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
@@ -16,5 +16,5 @@ export const Container = ({ children }: Props) => {
         <main className="flex flex-1 flex-col items-center justify-center">{children}</main>
       </div>
     </>
-  )
-}
+  );
+};

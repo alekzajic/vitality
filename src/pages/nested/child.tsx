@@ -1,4 +1,4 @@
-import { Link } from '@tanstack/react-location'
+import { Link } from '@tanstack/react-location';
 
 export default function Child() {
   return (
@@ -7,5 +7,5 @@ export default function Child() {
       <p>Using layout from `src/pages/nested.tsx`</p>
       <Link to="/routing">⟵</Link>
     </>
-  )
+  );
 }

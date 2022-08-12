@@ -1,10 +1,11 @@
 module.exports = {
   arrowParens: 'always',
   printWidth: 120,
-  semi: false,
+  semi: true,
   singleQuote: true,
   tabWidth: 2,
-  trailingComma: 'es5',
+  trailingComma: 'all',
   useTabs: false,
   plugins: [],
+  jsxSingleQuote: false,
 }

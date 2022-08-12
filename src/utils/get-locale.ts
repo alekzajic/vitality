@@ -1,9 +1,9 @@
 type GetLocaleArgs = {
-  locales: string[]
-  urlLocale: any
-  currentLocale: string
-  defaultLocale: string
-}
+  locales: string[];
+  urlLocale: any;
+  currentLocale: string;
+  defaultLocale: string;
+};
 
 export const getLocale = ({ locales, urlLocale, currentLocale, defaultLocale }: GetLocaleArgs) => {
   /**
@@ -11,7 +11,7 @@ export const getLocale = ({ locales, urlLocale, currentLocale, defaultLocale }: 
    * that one.
    */
   if (urlLocale && locales.includes(urlLocale as string)) {
-    return urlLocale
+    return urlLocale;
   }
 
   /**
@@ -19,11 +19,11 @@ export const getLocale = ({ locales, urlLocale, currentLocale, defaultLocale }: 
    * allowed locales array and if so use that one.
    */
   if (!urlLocale && currentLocale && locales.includes(currentLocale)) {
-    return currentLocale
+    return currentLocale;
   }
 
   /**
    * If all above fails we return the defaultLocale we received in the appSettings request.
    */
-  return defaultLocale
-}
+  return defaultLocale;
+};

@@ -1,8 +1,8 @@
-import { useSearch } from '@tanstack/react-location'
-import { useQuery } from '@tanstack/react-query'
+import { useSearch } from '@tanstack/react-location';
+import { useQuery } from '@tanstack/react-query';
 
-import { useAppStore } from '@/stores'
-import { getAppMessages, getLocale } from '@/utils'
+import { useAppStore } from '@/stores';
+import { getAppMessages, getLocale } from '@/utils';
 
 /**
  * Changes the locale and returns the new messages. Only locales that are defined in the locales
@@ -15,31 +15,31 @@ import { getAppMessages, getLocale } from '@/utils'
  */
 export const useLocale = () => {
   // Locale from URL
-  const { locale: urlLocale } = useSearch()
+  const { locale: urlLocale } = useSearch();
 
   // Locale stored in local storage
-  const { currentLocale, setCurrentLocale } = useAppStore()
+  const { currentLocale, setCurrentLocale } = useAppStore();
 
   const locale = {
     locales: ['en-GB', 'de-DE'],
     defaultLocale: 'en-GB',
-  }
+  };
 
   // AppSettings locale data
-  const locales = locale?.locales
-  const defaultLocale = locale?.defaultLocale
+  const locales = locale?.locales;
+  const defaultLocale = locale?.defaultLocale;
 
   const activeLocale = getLocale({
     locales: locales || [],
     urlLocale,
     currentLocale,
     defaultLocale,
-  })
+  });
 
   const { isLoading, error, data } = useQuery<object, Error>(['locale'], () => getAppMessages(activeLocale), {
     enabled: !!locale,
     onSuccess: () => setCurrentLocale(activeLocale),
-  })
+  });
 
   return {
     isLoading,
@@ -48,5 +48,5 @@ export const useLocale = () => {
       locale: activeLocale,
       messages: data,
     },
-  }
-}
+  };
+};

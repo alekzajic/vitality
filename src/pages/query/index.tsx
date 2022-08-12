@@ -1,35 +1,35 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Link, LoaderFn, MakeGenerics, MatchRoute, Outlet, useLoadRoute } from '@tanstack/react-location'
-import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
+import { Link, LoaderFn, MakeGenerics, MatchRoute, Outlet, useLoadRoute } from '@tanstack/react-location';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
-import { queryClient } from '../../config/query-client'
+import { queryClient } from '../../config/query-client';
 
 type Post = {
-  id: string
-  title: string
-  body: string
-}
+  id: string;
+  title: string;
+  body: string;
+};
 
 async function fetchPosts() {
-  await new Promise((r) => setTimeout(r, 500))
-  const { data } = await axios.get('https://jsonplaceholder.typicode.com/posts')
-  return data
+  await new Promise((r) => setTimeout(r, 500));
+  const { data } = await axios.get('https://jsonplaceholder.typicode.com/posts');
+  return data;
 }
 
 function usePosts() {
-  return useQuery<Post[], any>(['posts'], fetchPosts)
+  return useQuery<Post[], any>(['posts'], fetchPosts);
 }
 
-type Route = MakeGenerics<{ LoaderData: Post }>
+type Route = MakeGenerics<{ LoaderData: Post }>;
 
 export const Loader: LoaderFn<Route> = async () => {
-  return await queryClient.fetchQuery(['posts'], fetchPosts)
-}
+  return await queryClient.fetchQuery(['posts'], fetchPosts);
+};
 
 function Posts() {
-  const { status, data, error, isFetching } = usePosts()
-  const loadRoute = useLoadRoute()
+  const { status, data, error, isFetching } = usePosts();
+  const loadRoute = useLoadRoute();
 
   return (
     <div className="w-full">
@@ -75,7 +75,7 @@ function Posts() {
         )}
       </div>
     </div>
-  )
+  );
 }
 
-export default Posts
+export default Posts;

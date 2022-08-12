@@ -1,15 +1,15 @@
-import { LoaderFn, MakeGenerics, useMatch } from '@tanstack/react-location'
+import { LoaderFn, MakeGenerics, useMatch } from '@tanstack/react-location';
 
-import { Link } from '@/components'
+import { Link } from '@/components';
 
-type Route = MakeGenerics<{ LoaderData: { name: string } }>
+type Route = MakeGenerics<{ LoaderData: { name: string } }>;
 
 export const loader: LoaderFn<Route> = async () => {
-  return await Promise.resolve({ name: '/routing' })
-}
+  return await Promise.resolve({ name: '/routing' });
+};
 
 export default function Routing() {
-  const { data } = useMatch<Route>()
+  const { data } = useMatch<Route>();
 
   return (
     <>
@@ -21,5 +21,5 @@ export default function Routing() {
 
       <Link to="/nested">nested layouts</Link>
     </>
-  )
+  );
 }

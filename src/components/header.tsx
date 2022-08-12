@@ -1,6 +1,6 @@
-import { ReactNode } from 'react'
-import { GrClose, GrMenu } from 'react-icons/gr'
-import { HiMoon, HiOutlineMoon } from 'react-icons/hi'
+import { ReactNode } from 'react';
+import { GrClose, GrMenu } from 'react-icons/gr';
+import { HiMoon, HiOutlineMoon } from 'react-icons/hi';
 import {
   Avatar,
   Box,
@@ -19,21 +19,21 @@ import {
   useColorMode,
   useColorModeValue,
   useDisclosure,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 
-import Logo from '@/assets/logo.svg'
-import { Link } from '@/components'
+import Logo from '@/assets/logo.svg';
+import { Link } from '@/components';
 
 const Links = [
   { to: '/', text: 'Home' },
   { to: '/routing', text: 'Routing' },
   { to: '/posts', text: 'Posts' },
   { to: '/query', text: 'React-query' },
-]
+];
 
 export const Header = () => {
-  const { colorMode, toggleColorMode } = useColorMode()
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { colorMode, toggleColorMode } = useColorMode();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -91,5 +91,5 @@ export const Header = () => {
         ) : null}
       </Box>
     </>
-  )
-}
+  );
+};

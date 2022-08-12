@@ -1,2 +1,2 @@
 // Providers and contexts
-export * from './app-provider'
+export * from './app-provider';

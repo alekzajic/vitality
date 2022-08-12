@@ -1,2 +1,2 @@
 // Hooks
-export * from './use-locale'
+export * from './use-locale';

@@ -1,4 +1,4 @@
-import { Link } from '@/components'
+import { Link } from '@/components';
 
 export default function NestedIndex() {
   return (
@@ -7,5 +7,5 @@ export default function NestedIndex() {
       <p>Using layout from `src/pages/nested.tsx`</p>
       <Link to="/routing">⟵</Link>
     </>
-  )
+  );
 }

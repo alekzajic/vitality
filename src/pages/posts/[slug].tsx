@@ -1,18 +1,18 @@
-import { LoaderFn, MakeGenerics, useMatch } from '@tanstack/react-location'
+import { LoaderFn, MakeGenerics, useMatch } from '@tanstack/react-location';
 
-import { getPost, Post as PostType } from '@/api'
+import { getPost, Post as PostType } from '@/api';
 
-type Route = MakeGenerics<{ LoaderData: PostType; Params: { slug: string } }>
+type Route = MakeGenerics<{ LoaderData: PostType; Params: { slug: string } }>;
 
 export const Loader: LoaderFn<Route> = async ({ params }) => {
-  return await getPost(params.slug)
-}
+  return await getPost(params.slug);
+};
 
-export const Pending = () => <h1>Loading...</h1>
-export const Failure = () => <h1>Something went wrong...</h1>
+export const Pending = () => <h1>Loading...</h1>;
+export const Failure = () => <h1>Something went wrong...</h1>;
 
 export default function Post() {
-  const { data } = useMatch<Route>()
+  const { data } = useMatch<Route>();
 
   return (
     <>
@@ -25,5 +25,5 @@ export default function Post() {
         </code>
       </div>
     </>
-  )
+  );
 }

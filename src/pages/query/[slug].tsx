@@ -1,37 +1,37 @@
-import { LoaderFn, MakeGenerics, useMatch } from '@tanstack/react-location'
-import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
+import { LoaderFn, MakeGenerics, useMatch } from '@tanstack/react-location';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
-import { Post as PostType } from '@/api'
-import { Link } from '@/components'
-import { queryClient } from '@/config'
+import { Post as PostType } from '@/api';
+import { Link } from '@/components';
+import { queryClient } from '@/config';
 
-type Route = MakeGenerics<{ LoaderData: PostType; Params: { slug: string } }>
+type Route = MakeGenerics<{ LoaderData: PostType; Params: { slug: string } }>;
 
 export const Loader: LoaderFn<Route> = async ({ params }) => {
-  return await queryClient.fetchQuery(['posts', params.slug], () => fetchPostById(params.slug))
-}
+  return await queryClient.fetchQuery(['posts', params.slug], () => fetchPostById(params.slug));
+};
 
 const fetchPostById = async (id: string) => {
-  await new Promise((r) => setTimeout(r, 500))
-  const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
-  return data
-}
+  await new Promise((r) => setTimeout(r, 500));
+  const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  return data;
+};
 
 function usePost(postId: string) {
   return useQuery<PostType, any>(['posts', postId], () => fetchPostById(postId), {
     enabled: !!postId,
-  })
+  });
 }
 
 function Post() {
   const {
     params: { slug },
-  } = useMatch<Route>()
+  } = useMatch<Route>();
 
-  console.log(slug)
+  console.log(slug);
 
-  const { status, data, error, isFetching } = usePost(slug)
+  const { status, data, error, isFetching } = usePost(slug);
 
   return (
     <div>
@@ -53,7 +53,7 @@ function Post() {
         </>
       )}
     </div>
-  )
+  );
 }
 
-export default Post
+export default Post;

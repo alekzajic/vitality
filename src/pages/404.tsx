@@ -1,4 +1,4 @@
-import { Link } from '@/components'
+import { Link } from '@/components';
 
 export default function NotFound() {
   return (
@@ -7,5 +7,5 @@ export default function NotFound() {
       <p>page not found</p>
       <Link to="/">go home</Link>
     </>
-  )
+  );
 }
