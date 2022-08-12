@@ -1,7 +1,7 @@
 import create from 'zustand'
-import { persist } from 'zustand/middleware'
+import { devtools, persist } from 'zustand/middleware'
 
-type AppStore = {
+interface AppStore {
   locale: {
     locales: string[]
     defaultLocale: string
@@ -11,28 +11,30 @@ type AppStore = {
   setCurrentLocale: (locale: string) => void
 }
 
-export const useAppStore = create(
-  persist<AppStore>(
-    (setState) => ({
-      currentLocale: 'en-GB',
-      locale: {
-        locales: ['en-GB', 'de-DE'],
-        defaultLocale: 'en-GB',
-      },
-      setLocale: (loc: object) => {
-        setState((state) => ({
-          ...state,
-          loc,
-        }))
-      },
-      setCurrentLocale: (currLocale) =>
-        setState((state) => ({
-          ...state,
-          currentLocale: currLocale,
-        })),
-    }),
-    {
-      name: 'app_store',
-    }
+export const useAppStore = create<AppStore>()(
+  devtools(
+    persist(
+      (setState) => ({
+        currentLocale: 'en-GB',
+        locale: {
+          locales: ['en-GB', 'de-DE'],
+          defaultLocale: 'en-GB',
+        },
+        setLocale: (loc: object) => {
+          setState((state) => ({
+            ...state,
+            loc,
+          }))
+        },
+        setCurrentLocale: (currLocale) =>
+          setState((state) => ({
+            ...state,
+            currentLocale: currLocale,
+          })),
+      }),
+      {
+        name: 'app_store',
+      }
+    )
   )
 )
