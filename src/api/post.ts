@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 
 const url = 'https://jsonplaceholder.typicode.com/posts/';
-const get = (url: string) => fetch(url).then((response) => response.json());
+const get = (u: string) => fetch(u).then((response) => response.json());
 
 export type Post = {
   id: number;

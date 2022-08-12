@@ -9,7 +9,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const AppProvider = ({ children }: Props) => {
+export function AppProvider({ children }: Props) {
   const { isLoading: isLocaleLoading, error: localeError, data: localeData } = useLocale();
 
   const isLoading = isLocaleLoading;
@@ -31,4 +31,4 @@ export const AppProvider = ({ children }: Props) => {
       )}
     </>
   );
-};
+}

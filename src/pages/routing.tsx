@@ -5,7 +5,7 @@ import { Link } from '@/components';
 type Route = MakeGenerics<{ LoaderData: { name: string } }>;
 
 export const loader: LoaderFn<Route> = async () => {
-  return await Promise.resolve({ name: '/routing' });
+  return Promise.resolve({ name: '/routing' });
 };
 
 export default function Routing() {

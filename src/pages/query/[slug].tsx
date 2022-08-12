@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import { LoaderFn, MakeGenerics, useMatch } from '@tanstack/react-location';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
@@ -8,17 +9,16 @@ import { queryClient } from '@/config';
 
 type Route = MakeGenerics<{ LoaderData: PostType; Params: { slug: string } }>;
 
-export const Loader: LoaderFn<Route> = async ({ params }) => {
-  return await queryClient.fetchQuery(['posts', params.slug], () => fetchPostById(params.slug));
-};
-
 const fetchPostById = async (id: string) => {
-  await new Promise((r) => setTimeout(r, 500));
   const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
   return data;
 };
+export const Loader: LoaderFn<Route> = async ({ params }) => {
+  return queryClient.fetchQuery(['posts', params.slug], () => fetchPostById(params.slug));
+};
 
 function usePost(postId: string) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return useQuery<PostType, any>(['posts', postId], () => fetchPostById(postId), {
     enabled: !!postId,
   });
@@ -28,8 +28,6 @@ function Post() {
   const {
     params: { slug },
   } = useMatch<Route>();
-
-  console.log(slug);
 
   const { status, data, error, isFetching } = usePost(slug);
 

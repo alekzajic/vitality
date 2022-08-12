@@ -1,0 +1,4 @@
+node_modules
+src/routes/routes.d.ts
+tests
+__mocks__

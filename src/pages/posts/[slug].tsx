@@ -5,11 +5,15 @@ import { getPost, Post as PostType } from '@/api';
 type Route = MakeGenerics<{ LoaderData: PostType; Params: { slug: string } }>;
 
 export const Loader: LoaderFn<Route> = async ({ params }) => {
-  return await getPost(params.slug);
+  return getPost(params.slug);
 };
 
-export const Pending = () => <h1>Loading...</h1>;
-export const Failure = () => <h1>Something went wrong...</h1>;
+export function Pending() {
+  return <h1>Loading...</h1>;
+}
+export function Failure() {
+  return <h1>Something went wrong...</h1>;
+}
 
 export default function Post() {
   const { data } = useMatch<Route>();

@@ -1,5 +1,6 @@
 type GetLocaleArgs = {
   locales: string[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   urlLocale: any;
   currentLocale: string;
   defaultLocale: string;

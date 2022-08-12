@@ -6,7 +6,7 @@ type Props = {
   children: JSX.Element;
 };
 
-export const Container = ({ children }: Props) => {
+export function Container({ children }: Props) {
   const theme = useTheme();
   return (
     <>
@@ -17,4 +17,4 @@ export const Container = ({ children }: Props) => {
       </div>
     </>
   );
-};
+}

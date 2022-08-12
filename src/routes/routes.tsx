@@ -15,6 +15,7 @@ const preservedRoutes: Partial<Record<string, () => JSX.Element>> = Object.keys(
 const regularRoutes = Object.keys(ROUTES).reduce<Route[]>((routes, key) => {
   const module = ROUTES[key];
   const route: Route = {
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     element: () => module().then((mod) => (mod?.default ? <mod.default /> : <></>)),
     loader: async (...args) => module().then((mod) => mod?.Loader?.(...args)),
     pendingElement: async () => module().then((mod) => (mod?.Pending ? <mod.Pending /> : null)),
@@ -48,7 +49,7 @@ const regularRoutes = Object.keys(ROUTES).reduce<Route[]>((routes, key) => {
 
     if (root || node) {
       const current = root ? routes : parent.children;
-      const found = current?.find((route) => route.path === path);
+      const found = current?.find((r) => r.path === path);
       if (found) found.children ??= [];
       else current?.[insert]({ path, children: [] });
       return found || (current?.[insert === 'unshift' ? 0 : current.length - 1] as Route);
@@ -64,13 +65,14 @@ const regularRoutes = Object.keys(ROUTES).reduce<Route[]>((routes, key) => {
   return routes;
 }, []);
 
-const App = preservedRoutes?.['_app'] || Fragment;
+// eslint-disable-next-line no-underscore-dangle
+const App = preservedRoutes?._app || Fragment;
 const NotFound = preservedRoutes?.['404'] || Fragment;
 
 const location = new ReactLocation();
 const routes = [...regularRoutes, { path: '*', element: <NotFound /> }];
 
-export const Routes = (props: Omit<RouterProps, 'children' | 'location' | 'routes'> = {}) => {
+export function Routes(props: Omit<RouterProps, 'children' | 'location' | 'routes'> = {}) {
   return (
     <Router {...props} location={location} routes={routes}>
       <App>
@@ -78,4 +80,4 @@ export const Routes = (props: Omit<RouterProps, 'children' | 'location' | 'route
       </App>
     </Router>
   );
-};
+}

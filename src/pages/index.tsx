@@ -7,14 +7,12 @@ export default function Home() {
   };
 
   return (
-    <>
-      <Center flexDirection="column">
-        <Image width="320px" height="320px" src="/assets/icons/logo.svg" alt={data.name} title={data.name} />
-        <Heading as="h1" size="4xl">
-          Falcon v0.0.1
-        </Heading>
-        <Text>{data.description}</Text>
-      </Center>
-    </>
+    <Center flexDirection="column">
+      <Image width="320px" height="320px" src="/assets/icons/logo.svg" alt={data.name} title={data.name} />
+      <Heading as="h1" size="4xl">
+        Falcon v0.0.1
+      </Heading>
+      <Text>{data.description}</Text>
+    </Center>
   );
 }
