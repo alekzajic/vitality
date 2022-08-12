@@ -1,3 +1,5 @@
+import { ColorModeScript, useTheme } from '@chakra-ui/react'
+
 import { Header } from '@/components'
 
 type Props = {
@@ -5,10 +7,14 @@ type Props = {
 }
 
 export const Container = ({ children }: Props) => {
+  const theme = useTheme()
   return (
-    <div className="flex min-h-screen min-w-full flex-col p-6">
-      <Header />
-      <main className="flex flex-1 flex-col items-center justify-center">{children}</main>
-    </div>
+    <>
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      <div>
+        <Header />
+        <main className="flex flex-1 flex-col items-center justify-center">{children}</main>
+      </div>
+    </>
   )
 }

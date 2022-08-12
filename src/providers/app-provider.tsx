@@ -1,7 +1,9 @@
 import { ReactNode } from 'react'
 import { IntlContext, IntlProvider } from 'react-intl'
+import { ChakraProvider } from '@chakra-ui/react'
 
 import { useLocale } from '@/hooks'
+import { theme } from '@/theme'
 
 type Props = {
   children: ReactNode
@@ -24,7 +26,7 @@ export const AppProvider = ({ children }: Props) => {
           messages={localeData?.messages as Record<string, string>}
           key={localeData?.locale as string}
         >
-          <IntlContext.Consumer>{() => children}</IntlContext.Consumer>
+          <IntlContext.Consumer>{() => <ChakraProvider theme={theme}>{children}</ChakraProvider>}</IntlContext.Consumer>
         </IntlProvider>
       )}
     </>

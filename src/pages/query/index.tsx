@@ -32,7 +32,7 @@ function Posts() {
   const loadRoute = useLoadRoute()
 
   return (
-    <div>
+    <div className="w-full">
       <h2>Posts {isFetching ? '...' : ''}</h2>
       <div>
         {status === 'loading' ? (

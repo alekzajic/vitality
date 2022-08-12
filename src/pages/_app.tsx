@@ -1,5 +1,3 @@
-import '@/styles/layers.css'
-
 import { Container } from '@/components'
 import { AppProvider } from '@/providers'
 

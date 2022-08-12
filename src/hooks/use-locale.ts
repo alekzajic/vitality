@@ -18,7 +18,12 @@ export const useLocale = () => {
   const { locale: urlLocale } = useSearch()
 
   // Locale stored in local storage
-  const { currentLocale, setCurrentLocale, locale } = useAppStore()
+  const { currentLocale, setCurrentLocale } = useAppStore()
+
+  const locale = {
+    locales: ['en-GB', 'de-DE'],
+    defaultLocale: 'en-GB',
+  }
 
   // AppSettings locale data
   const locales = locale?.locales

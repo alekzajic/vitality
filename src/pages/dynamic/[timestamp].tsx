@@ -9,11 +9,9 @@ export default function DynamicTimestamp() {
 
   return (
     <>
-      <h1 className="font-mono text-2xl">/dynamic/:timestamp</h1>
-      <p className="mt-4 text-lg">{params.timestamp}</p>
-      <Link className="mt-4 p-2 hover:underline" to="/routing">
-        ⟵
-      </Link>
+      <h1>/dynamic/:timestamp</h1>
+      <p>{params.timestamp}</p>
+      <Link to="/routing">⟵</Link>
     </>
   )
 }

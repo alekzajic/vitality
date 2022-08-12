@@ -9,7 +9,7 @@ import { Routes } from '@/routes'
 const app = document.getElementById('app') as Element
 const root = createRoot(app)
 
-function Client() {
+function App() {
   return (
     <StrictMode>
       <QueryClientProvider client={queryClient}>
@@ -20,5 +20,5 @@ function Client() {
   )
 }
 
-if (app.hasChildNodes()) hydrateRoot(app, <Client />)
-else root.render(<Client />)
+if (app.hasChildNodes()) hydrateRoot(app, <App />)
+else root.render(<App />)
